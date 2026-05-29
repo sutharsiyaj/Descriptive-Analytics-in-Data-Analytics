@@ -1,0 +1,85 @@
+#Descriptive Analytics in Data Analytics & Visualization (DAV)
+ 
+#Step 1: Install Required Libraries
+!pip install pandas numpy matplotlib seaborn
+#Step 2: Import Libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+#Step 3: Create Dataset
+# Sample student marks dataset
+
+data = {
+    'Student': ['A','B','C','D','E'],
+    'Marks': [75, 80, 85, 90, 95]
+}
+
+# Create DataFrame
+
+df = pd.DataFrame(data)
+
+print(df)
+#Step 4: Descriptive Analytics
+# Mean
+
+mean_value = df['Marks'].mean()
+
+# Median
+
+median_value = df['Marks'].median()
+
+# Mode
+
+mode_value = df['Marks'].mode()[0]
+
+# Standard Deviation
+
+std_value = df['Marks'].std()
+
+# Display results
+
+print("Mean:", mean_value)
+print("Median:", median_value)
+print("Mode:", mode_value)
+print("Standard Deviation:", std_value)
+Step 5: Statistical Summary
+print(df.describe())
+Step 6: Bar Chart Visualization
+plt.figure(figsize=(7,5))
+
+plt.bar(df['Student'],
+        df['Marks'],
+        color='blue')
+
+plt.title("Student Marks Analysis")
+plt.xlabel("Students")
+plt.ylabel("Marks")
+
+plt.show()
+Step 7: Histogram Visualization
+plt.figure(figsize=(7,5))
+
+plt.hist(df['Marks'],
+         bins=5,
+         color='green')
+
+plt.title("Marks Distribution")
+plt.xlabel("Marks")
+plt.ylabel("Frequency")
+
+plt.show()
+
+
+#Step 8: Box Plot Visualization
+plt.figure(figsize=(6,4))
+
+sns.boxplot(y=df['Marks'])
+
+plt.title("Box Plot Analysis")
+
+plt.show()
+
+#Step 9: Final Output
+print("Descriptive Analytics Completed Successfully!")
+
